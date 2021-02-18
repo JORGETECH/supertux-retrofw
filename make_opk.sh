@@ -1,10 +1,10 @@
 #!/bin/sh
 
-OPK_NAME=supertux.opk
+OPK_NAME=supertux-retrofw.opk
 echo ${OPK_NAME}
 
-# create default.gcw0.desktop
-cat > default.gcw0.desktop <<EOF
+# create default.retrofw.desktop
+cat > default.retrofw.desktop <<EOF
 [Desktop Entry]
 Name=Supertux
 Comment=Jump'n run game
@@ -17,10 +17,10 @@ Categories=games;
 EOF
 
 # create opk
-FLIST="data supertux supertux.png default.gcw0.desktop"
+FLIST="data supertux supertux.png default.retrofw.desktop"
 
 rm -f ${OPK_NAME}
-mksquashfs ${FLIST} ${OPK_NAME} -all-root -no-xattrs -noappend -no-exports
+mksquashfs ${FLIST} ${OPK_NAME} -no-xattrs -noappend
 
-cat default.gcw0.desktop
-rm -f default.gcw0.desktop
+cat default.retrofw.desktop
+rm -f default.retrofw.desktop
